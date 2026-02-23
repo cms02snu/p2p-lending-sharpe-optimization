@@ -9,11 +9,11 @@
 tau 변화에 따른 평균수익–변동성의 동시 변화를 포착합니다.
 
 수식(표시용):
-```text
+
 $$ E[r_i] = (1 - p_i) * IRR_i + p_i * r_default $$
 
 (v4, decile)
-E[r_i] = (1 - p_i) * r_normal[d(i)] + p_i * r_default[d(i)]
+$$ E[r_i] = (1 - p_i) * r_normal[d(i)] + p_i * r_default[d(i)] $$
 
 
 ---
