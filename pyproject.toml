@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lcp2p"
+version = "0.1.0"
+description = "내생적 투자집합 하의 포트폴리오 수익률 최적화 (LendingClub P2P 대출) 재현 코드"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "numpy",
+  "pandas",
+  "scikit-learn",
+  "xgboost",
+  "optuna",
+  "matplotlib"
+]
+
+[project.scripts]
+lcp2p-run = "lcp2p.cli:main"
