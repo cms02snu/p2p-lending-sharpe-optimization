@@ -17,6 +17,12 @@ def calc_expected_return(raw_df: pd.DataFrame, return_df: pd.DataFrame, default_
 
     common_idx = main_df.index.intersection(r_df.index).intersection(p_df.index)
     irr = r_df.loc[common_idx, 'IRR']
+    irr = (
+        irr.astype(str)
+        .str.replace('%', '', regex=False)
+        .str.strip()
+    )
+    irr = pd.to_numeric(irr, errors='coerce')
     prob = p_df.loc[common_idx]
     exp_ret = (1.0 - prob) * irr + prob * float(r_default)
     result = pd.DataFrame({'expected_return': exp_ret}).reset_index().rename(columns={'index': 'id'})
